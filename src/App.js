@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import UserContext from "./contexts/UserContext";
-import { useState } from 'react';
+import { useState } from "react";
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
 import LogonPage from "./components/LogonPage";
@@ -9,12 +9,12 @@ import NewSubscriptionPage from "./components/NewSubscriptionPage";
 import SubscriptionPage from "./components/SubscriptionPage";
 
 function App() {
-  const storedUser = JSON.parse(localStorage.getItem('storedUser'));
+  const storedUser = JSON.parse(localStorage.getItem("storedUser"));
   const [user, setUser] = useState(storedUser);
   return (
-    <UserContext.Provider value={{user, setUser}}>
+    <UserContext.Provider value={{ user, setUser }}>
       <BrowserRouter>
-      <Switch>
+        <Switch>
           <Route path="/" exact>
             <HomePage></HomePage>
           </Route>
@@ -22,16 +22,16 @@ function App() {
             <LoginPage></LoginPage>
           </Route>
           <Route path="/sign-up" exact>
-           <LogonPage></LogonPage>
+            <LogonPage></LogonPage>
           </Route>
           <Route path="/details" exact>
-           <DetailsPage></DetailsPage>
+            <DetailsPage></DetailsPage>
           </Route>
           <Route path="/new-subscription" exact>
-           <NewSubscriptionPage></NewSubscriptionPage>
+            <NewSubscriptionPage></NewSubscriptionPage>
           </Route>
           <Route path="/subscription" exact>
-           <SubscriptionPage></SubscriptionPage>
+            <SubscriptionPage></SubscriptionPage>
           </Route>
         </Switch>
       </BrowserRouter>

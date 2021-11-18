@@ -56,10 +56,29 @@ const GenericButton = styled.button`
     filter: brightness(1.5);
   }
 `;
+
+const SubscriptionCard = styled.div`
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #4d65a8;
+  background-color: #e5cdb3;
+  padding: 0px 22px 24px 22px;
+  margin-bottom: 30px;
+
+  img {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+  }
+`;
 export {
   SignUpOrLoginButtonStyled,
   SignUpOrLoginInputStyled,
   SwitchSignUpLoginLinkStyled,
   MensagesStyled,
   GenericButton,
+  SubscriptionCard,
 };
