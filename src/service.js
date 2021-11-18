@@ -1,23 +1,23 @@
 import axios from "axios";
-const URL = 'http://localhost:4001';
-
+const URL = "http://localhost:4001";
 
 const createHeaders = (token) => {
-    return { headers: { Authorization: `Bearer ${token}` } };
+  return { headers: { Authorization: `Bearer ${token}` } };
+};
+
+function postLogin(body) {
+  const promise = axios.post(`${URL}/sign-in`, body);
+  return promise;
 }
 
-function postLogin (body){
-    const promise = axios.post(`${URL}/sign-in`, body);
-    return promise;
+function postSignUp(body) {
+  const promise = axios.post(`${URL}/sign-up`, body);
+  return promise;
 }
 
-function postSignUp (body){
-    const promise = axios.post(`${URL}/sign-up`, body);
-    return promise;
+function getSubscription(token) {
+  const promise = axios.get(`${URL}/subscription`, createHeaders(token));
+  return promise;
 }
 
-
-export {
-    postLogin,
-    postSignUp,
-}
+export { postLogin, postSignUp, getSubscription };
