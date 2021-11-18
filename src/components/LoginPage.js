@@ -3,7 +3,6 @@ import { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import {SignUpOrLoginButtonStyled, SignUpOrLoginInputStyled, SwitchSignUpLoginLinkStyled} from "../shared/sharedStyles/sharedStyles";
 import UserContext from "../contexts/UserContext";
-
 import { postLogin } from "../service";
 
 export default function LoginPage() {
@@ -52,7 +51,7 @@ export default function LoginPage() {
     }
     return (
         <LoginDataContainerStyled onSubmit={userLogin}>
-            <h1>Bem vindo</h1>
+            <h1>Bem-vindo ao Gratibox</h1>
             <SignUpOrLoginInputStyled 
                     type="email" 
                     placeholder="e-mail"
@@ -62,22 +61,19 @@ export default function LoginPage() {
                 />
                 <SignUpOrLoginInputStyled 
                     type="password" 
-                    placeholder="password"
+                    placeholder="senha"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
                 <SignUpOrLoginButtonStyled 
                 type="submit" 
-                back={'login'}
-                color= {'login'}
-                width ={'login'}
                 disabled={isLoading ? true : false}>
-                    Log In
+                    Login
                 </SignUpOrLoginButtonStyled >
                 <Link to={'/sign-up'} style={{textDecoration: 'none'}}>
                     <SwitchSignUpLoginLinkStyled>
-                        First time? Create an account!
+                    Ainda não sou grato
                     </SwitchSignUpLoginLinkStyled>
                 </Link>
         </LoginDataContainerStyled>

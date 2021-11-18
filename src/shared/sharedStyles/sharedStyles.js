@@ -17,16 +17,16 @@ const SignUpOrLoginInputStyled = styled.input`
     }
 `
 const SignUpOrLoginButtonStyled = styled.button`
-    background-color: ${props => props.back === 'login'? `#1877F2`: `${props.back}`};
+    background-color: #8C97EA;
+    margin-top: 50px;
     height: 65px;
     border: none;
     border-radius: 6px;
     margin-bottom: 13px;
-    width:  ${props => props.width === 'login'? `100%`: '48%'};
-    font-family: 'Oswald', sans-serif;
+    width: 90%;
     font-size: 27px;
     font-weight: 700;
-    color: ${props => props.back === 'login'? `#FFF`: 'black'};
+    color: white;
     &:hover{
         cursor: pointer;
         filter: brightness(1.5);
@@ -34,11 +34,9 @@ const SignUpOrLoginButtonStyled = styled.button`
     
 `
 const SwitchSignUpLoginLinkStyled = styled.p`
-    color: #FFF;
-    font-family: 'Lato', sans-serif;
     text-align: center;
-    text-decoration: underline;
-     
+    margin-top: 15px;
+    color: white;
 `
 export {
     SignUpOrLoginButtonStyled,
