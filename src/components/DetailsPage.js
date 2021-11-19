@@ -51,8 +51,17 @@ export default function DetailsPage() {
             type={subscriptionInfo.type}
           ></DatesComponent>
         </CardInfoStyled>
+        <ItemsStyled>
+          {subscriptionInfo.items.map((item) => {
+            return <p>{item}</p>;
+          })}
+        </ItemsStyled>
       </DetailCardStyled>
-      <GenericButtonStyled>Avaliar entregas</GenericButtonStyled>
+      <GenericButtonStyled
+        onClick={() => alert("Futuramente voce podera avaliar")}
+      >
+        Avaliar entregas
+      </GenericButtonStyled>
     </ContainerCenterStyled>
   );
 }
@@ -63,4 +72,17 @@ const ColorRedStyled = styled.span`
 
 const CardInfoStyled = styled.div`
   width: 100%;
+`;
+
+const ItemsStyled = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: red;
+  margin-top: 30px;
+
+  p {
+    font-weight: 300;
+    margin-top: 5px;
+  }
 `;
