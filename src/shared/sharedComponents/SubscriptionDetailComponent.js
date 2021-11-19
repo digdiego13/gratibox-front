@@ -32,7 +32,6 @@ export default function SubscriptionDetailComponent({
     } else {
       setSubscriptionItems([...subscriptionItems, item]);
     }
-    console.log(subscriptionItems);
   }
 
   return (

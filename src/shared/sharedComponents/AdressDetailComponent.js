@@ -20,7 +20,6 @@ export default function AdressDetailComponent({
       setState("");
     }
     setState(() => s);
-    console.log(state);
   }
 
   return (

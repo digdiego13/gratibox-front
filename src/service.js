@@ -20,4 +20,9 @@ function getSubscription(token) {
   return promise;
 }
 
-export { postLogin, postSignUp, getSubscription };
+function postSubscription(token, body) {
+  const promise = axios.post(`${URL}/subscription`, body, createHeaders(token));
+  return promise;
+}
+
+export { postLogin, postSignUp, getSubscription, postSubscription };

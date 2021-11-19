@@ -1,5 +1,5 @@
-import { useState, useContext } from "react";
-import { useHistory, useParams } from "react-router";
+import { useState, useContext, useEffect } from "react";
+import { useHistory } from "react-router";
 import UserContext from "../contexts/UserContext";
 import {
   GenericButtonStyled,
@@ -10,10 +10,11 @@ import {
 import SubscriptionDetailComponent from "../shared/sharedComponents/SubscriptionDetailComponent";
 import AdressDetailComponent from "../shared/sharedComponents/AdressDetailComponent";
 import newSubsImg from "../shared/images/image03.jpg";
+import { postSubscription, getSubscription } from "../service";
 
 export default function NewSubscriptionPage() {
   const { user } = useContext(UserContext);
-  const { subscriptionTypeParam } = useParams();
+  const history = useHistory();
   const [subscriptionType, setSubscriptionType] = useState("");
   const [subscriptionDates, setSubscriptionDates] = useState("");
   const [subscriptionItems, setSubscriptionItems] = useState("");
@@ -31,7 +32,6 @@ export default function NewSubscriptionPage() {
       subscriptionDates !== ""
     ) {
       setAdressAppear(true);
-      console.log(subscriptionItems);
     } else {
       alert("Preencha todos os campos");
     }
@@ -39,11 +39,39 @@ export default function NewSubscriptionPage() {
 
   function finishBuy() {
     if (adress !== "" && city !== "" && state !== "Estado" && cep !== "") {
-      console.log(state);
+      const body = {
+        subscriptionType,
+        subscriptionDates,
+        subscriptionItems,
+        adress,
+        cep,
+        city,
+        state,
+      };
+      postSubscription(user.token, body)
+        .then((res) => {
+          alert("Parabens, Gratiluz !");
+          history.push("/details");
+        })
+        .catch((error) => {
+          alert("Algo deu errado");
+        });
     } else {
       alert("Preencha todos os campos");
     }
   }
+
+  useEffect(() => {
+    getSubscription(user.token)
+      .then((res) => {
+        Object.keys(res.data).length > 0
+          ? history.push("/details")
+          : console.log("ok");
+      })
+      .catch((err) => {
+        alert(err.response.status);
+      });
+  }, []);
 
   return (
     <ContainerCenterStyled>

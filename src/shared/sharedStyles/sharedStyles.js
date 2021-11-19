@@ -97,7 +97,8 @@ const ContainerCenterStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
+
 export {
   SignUpOrLoginButtonStyled,
   SignUpOrLoginInputStyled,
@@ -106,5 +107,5 @@ export {
   GenericButtonStyled,
   SubscriptionCardStyled,
   DetailCardStyled,
-  ContainerCenterStyled
+  ContainerCenterStyled,
 };
