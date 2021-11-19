@@ -1,6 +1,6 @@
 import {
   MensagesStyled,
-  GenericButton,
+  GenericButtonStyled,
   SwitchSignUpLoginLinkStyled,
 } from "../shared/sharedStyles/sharedStyles";
 import imagemInicial from "../shared/images/image05.webp";
@@ -17,7 +17,7 @@ export default function HomePage() {
       </MensagesStyled>
       <img src={imagemInicial} alt={"imagem inicial"} width={`120%`}></img>
       <Link to={"/sign-up"} style={{ textDecoration: "none" }}>
-        <GenericButton>Quero Comecar</GenericButton>
+        <GenericButtonStyled>Quero Comecar</GenericButtonStyled>
       </Link>
       <Link to={"/sign-in"} style={{ textDecoration: "none" }}>
         <SwitchSignUpLoginLinkStyled>Ja sou Grato</SwitchSignUpLoginLinkStyled>

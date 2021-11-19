@@ -1,7 +1,7 @@
 import {
-  GenericButton,
+  GenericButtonStyled,
   MensagesStyled,
-  SubscriptionCard,
+  SubscriptionCardStyled,
 } from "../shared/sharedStyles/sharedStyles";
 import subscriptionImgWeek from "../shared/images/image04.jpg";
 import subscriptionImgMonth from "../shared/images/image02.jpg";
@@ -9,6 +9,7 @@ import { useContext, useEffect } from "react";
 import UserContext from "../contexts/UserContext";
 import { useHistory } from "react-router";
 import { getSubscription } from "../service";
+import { Link } from "react-router-dom";
 
 export default function SubscriptionPage() {
   const { user } = useContext(UserContext);
@@ -31,21 +32,25 @@ export default function SubscriptionPage() {
       <MensagesStyled>
         Você ainda não assinou um plano, que tal começar agora?
       </MensagesStyled>
-      <SubscriptionCard>
+      <SubscriptionCardStyled>
         <img src={subscriptionImgWeek} alt={"Week subscription"}></img>
         <p>
           Você recebe um box por semana. Ideal para quem quer exercer a gratidão
           todos os dias.
         </p>
-        <GenericButton>Assinar</GenericButton>
-      </SubscriptionCard>
-      <SubscriptionCard>
+        <Link to={"/new-subscription/week"} style={{ textDecoration: "none" }}>
+          <GenericButtonStyled>Assinar</GenericButtonStyled>
+        </Link>
+      </SubscriptionCardStyled>
+      <SubscriptionCardStyled>
         <img src={subscriptionImgMonth} alt={"Month subscription"}></img>
         <p>Você recebe um box por mês.</p>
         <br />
         <p>Ideal para quem está começando agora.</p>
-        <GenericButton>Assinar</GenericButton>
-      </SubscriptionCard>
+        <Link to={"/new-subscription/month"} style={{ textDecoration: "none" }}>
+          <GenericButtonStyled>Assinar</GenericButtonStyled>
+        </Link>
+      </SubscriptionCardStyled>
     </>
   );
 }

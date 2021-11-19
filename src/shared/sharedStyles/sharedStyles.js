@@ -42,7 +42,7 @@ const MensagesStyled = styled.p`
   margin-bottom: 22px;
 `;
 
-const GenericButton = styled.button`
+const GenericButtonStyled = styled.button`
   background-color: #8c97ea;
   margin-top: 35px;
   border: none;
@@ -57,7 +57,7 @@ const GenericButton = styled.button`
   }
 `;
 
-const SubscriptionCard = styled.div`
+const SubscriptionCardStyled = styled.div`
   border-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -74,11 +74,37 @@ const SubscriptionCard = styled.div`
     overflow: hidden;
   }
 `;
+
+const DetailCardStyled = styled.div`
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #4d65a8;
+  background-color: white;
+  padding: 0px 22px 10px 22px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  img {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+  }
+`;
+
+const ContainerCenterStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 export {
   SignUpOrLoginButtonStyled,
   SignUpOrLoginInputStyled,
   SwitchSignUpLoginLinkStyled,
   MensagesStyled,
-  GenericButton,
-  SubscriptionCard,
+  GenericButtonStyled,
+  SubscriptionCardStyled,
+  DetailCardStyled,
+  ContainerCenterStyled
 };
