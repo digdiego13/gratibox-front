@@ -18,6 +18,11 @@ export default function NewSubscriptionPage() {
   const [subscriptionDates, setSubscriptionDates] = useState("");
   const [subscriptionItems, setSubscriptionItems] = useState("");
   const [adressAppear, setAdressAppear] = useState(false);
+  const [adress, setAdress] = useState("");
+  const [cep, setCep] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("Estado");
+  const [name, setName] = useState("");
 
   function changeDisplay() {
     if (
@@ -32,6 +37,14 @@ export default function NewSubscriptionPage() {
     }
   }
 
+  function finishBuy() {
+    if (adress !== "" && city !== "" && state !== "Estado" && cep !== "") {
+      console.log(state);
+    } else {
+      alert("Preencha todos os campos");
+    }
+  }
+
   return (
     <ContainerCenterStyled>
       <h1>Bom te ver aqui, {user.name}</h1>
@@ -39,7 +52,18 @@ export default function NewSubscriptionPage() {
       <DetailCardStyled>
         <img src={newSubsImg} alt={"subs img"}></img>
         {adressAppear ? (
-          <AdressDetailComponent></AdressDetailComponent>
+          <AdressDetailComponent
+            adress={adress}
+            setAdress={setAdress}
+            cep={cep}
+            setCep={setCep}
+            city={city}
+            setCity={setCity}
+            state={state}
+            setState={setState}
+            name={name}
+            setName={setName}
+          ></AdressDetailComponent>
         ) : (
           <SubscriptionDetailComponent
             subscriptionItems={subscriptionItems}
@@ -52,7 +76,9 @@ export default function NewSubscriptionPage() {
         )}
       </DetailCardStyled>
       {adressAppear ? (
-        <GenericButtonStyled>Finalizar Compra</GenericButtonStyled>
+        <GenericButtonStyled onClick={finishBuy}>
+          Finalizar Compra
+        </GenericButtonStyled>
       ) : (
         <GenericButtonStyled onClick={changeDisplay}>
           Continuar
