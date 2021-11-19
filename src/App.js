@@ -27,7 +27,7 @@ function App() {
           <Route path="/details" exact>
             <DetailsPage></DetailsPage>
           </Route>
-          <Route path="/new-subscription" exact>
+          <Route path="/new-subscription/:subscriptionType" exact>
             <NewSubscriptionPage></NewSubscriptionPage>
           </Route>
           <Route path="/subscription" exact>
