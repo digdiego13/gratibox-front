@@ -48,6 +48,7 @@ export default function NewSubscriptionPage() {
         city,
         state,
       };
+      console.log(body)
       postSubscription(user.token, body)
         .then((res) => {
           alert("Parabens, Gratiluz !");
