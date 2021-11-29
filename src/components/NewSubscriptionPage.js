@@ -72,6 +72,7 @@ export default function NewSubscriptionPage() {
       .catch((err) => {
         alert(err.response.status);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -35,7 +35,6 @@ export default function DatesComponent({ date, type }) {
 
   function nextDelivery() {
     const array = [];
-    const today = dayjs().format("DD/MM/YYYY");
     if (type === "Semanal") {
       const nextDay = findNextDay();
       console.log(nextDay);
