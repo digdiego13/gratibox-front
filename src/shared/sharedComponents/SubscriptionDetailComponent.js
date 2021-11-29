@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
-import { useHistory, useParams } from "react-router";
 import { BiCheckCircle } from "react-icons/bi";
 
 export default function SubscriptionDetailComponent({

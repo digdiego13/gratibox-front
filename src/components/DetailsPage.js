@@ -9,7 +9,6 @@ import { useContext, useEffect, useState } from "react";
 import UserContext from "../contexts/UserContext";
 import { useHistory } from "react-router";
 import { getSubscription } from "../service";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import DatesComponent from "../shared/sharedComponents/DatesComponent";
 
