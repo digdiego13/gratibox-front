@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL = "http://localhost:4001";
+const URL = process.env.REACT_APP_API_URL;
 
 const createHeaders = (token) => {
   return { headers: { Authorization: `Bearer ${token}` } };
