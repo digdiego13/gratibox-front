@@ -7,14 +7,12 @@ import {
 import detailImg from "../shared/images/image03.jpg";
 import { useContext, useEffect, useState } from "react";
 import UserContext from "../contexts/UserContext";
-import { useHistory } from "react-router";
 import { getSubscription } from "../service";
 import styled from "styled-components";
 import DatesComponent from "../shared/sharedComponents/DatesComponent";
 
 export default function DetailsPage() {
   const { user } = useContext(UserContext);
-  const history = useHistory();
   const [subscriptionInfo, setSubscriptInfo] = useState({});
 
   useEffect(() => {
@@ -25,6 +23,7 @@ export default function DetailsPage() {
       .catch((err) => {
         alert(err.response.status);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (Object.keys(subscriptionInfo).length === 0) {
