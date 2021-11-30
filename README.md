@@ -1,6 +1,6 @@
 # Gratibox
 
-Why dont you visit my application ? gratibox-front-five.vercel.app/
+Why dont you visit my application ? https://gratibox-front-five.vercel.app/
 
 stress, bad mood, anxiety. leave it all behind. Give value to your well-being with Gratibox.
 
